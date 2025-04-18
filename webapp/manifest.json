@@ -169,5 +169,8 @@
   "sap.cloud": {
     "public": true,
     "service": "capllmui03"
+  },
+  "sap.platform.cf": {
+    "ui5VersionNumber": "1.120.11"
   }
 }

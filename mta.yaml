@@ -27,7 +27,7 @@ modules:
           sap.cloud.service: capllmui03
         - Authentication: OAuth2UserTokenExchange
           Name: capllmui03_uaa
-          ServiceInstanceName: capllmui03-xsuaa-service
+          ServiceInstanceName: hr-approval-rag-usecase-xsuaa-service
           ServiceKeyName: capllmui03-uaa-key
           sap.cloud.service: capllmui03
         existing_destinations_policy: update
@@ -57,22 +57,6 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
-# # ------------------ App Router -------------------------------  
-# - name: capllmui03-approuter
-#   type: approuter.nodejs
-#   path: approuter
-#   parameters:
-#     keep-existing-routes: true
-#     disk-quota: 256M
-#     memory: 256M
-#   build-parameters:
-#     builder: custom
-#     commands:
-#       - npm install
-#   requires:
-#     - name: capllmui03-repo-host
-#     - name: capllmui03-uaa
-# # -------------------------------------------------------------
 resources:
 - name: capllmui03-destination-service
   type: org.cloudfoundry.managed-service
@@ -86,7 +70,7 @@ resources:
             Name: ui5
             ProxyType: Internet
             Type: HTTP
-            URL: https://ui5.sap.com
+            URL: https://sapui5.hana.ondemand.com/1.120.11
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
